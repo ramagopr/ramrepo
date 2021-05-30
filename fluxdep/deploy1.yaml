@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp44444
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webapp44
+  template:
+    metadata:
+      labels:
+        app: webapp44
+    spec:
+      containers:
+      - name: webapp44
+        image: katacoda/docker-http-server:latest
+        ports:
+        - containerPort: 80
