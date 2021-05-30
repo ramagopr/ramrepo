@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ramjideployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ramjideployment 
+  template:
+    metadata:
+      labels:
+        app: ramjideployment 
+    spec:
+      containers:
+      - name: ramjideployment 
+        image: katacoda/docker-http-server:latest
+        ports:
+        - containerPort: 80
